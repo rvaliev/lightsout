@@ -28,22 +28,6 @@ include("core/functions.php");
 <body>
     <table>
         <?php
-        /*foreach ($_SESSION['gametable'] as $rows => $cols) {
-            echo "<tr>";
-            foreach ($cols as $colsKey =>$colsValue)
-            {
-                if ($colsValue == 0) {
-                    echo "<td><a href=\"index.php?row=$rows&column=$colsKey\"><img src=\"images/lightsout-uit.png\" alt=\"img\"/></a></td>";
-                }
-                elseif ($colsValue == 1)
-                {
-                    echo "<td><a href=\"index.php?row=$rows&column=$colsKey\"><img src=\"images/lightsout-aan.png\" alt=\"img\"/></a></td>";
-
-                }
-            }
-            echo "</tr>";
-
-        }*/
 
         $row = 3;
         $col = 3;
@@ -66,7 +50,7 @@ include("core/functions.php");
 
         ?>
     </table>
-    <h4><a href="#">Nieuw spel</a></h4>
+    <h4><a href="index.php?restart=1">Nieuw spel</a></h4>
 
 </body>
 </html>
