@@ -45,10 +45,12 @@ include("core/functions.php");
 
         }*/
 
+        $row = 3;
+        $col = 3;
 
-        for ($i = 0; $i <= 3; $i++){
+        for ($i = 0; $i <= $row; $i++){
             echo "<tr>";
-            for ($j = 0; $j <= 3; $j++){
+            for ($j = 0; $j <= $col; $j++){
                 if ($_SESSION['gametable'][$i][$j] == 0) {
                     echo "<td><a href=\"index.php?row=$i&column=$j\"><img src=\"images/lightsout-uit.png\" alt=\"img\"/></a></td>";
                 }
