@@ -4,12 +4,15 @@ function switchLight($lightControl)
 {
     if($lightControl == 1)
     {
+
         return $lightControl = 0;
     }
     elseif($lightControl == 0)
     {
+
         return $lightControl = 1;
     }
+
 }
 
 
