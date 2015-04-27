@@ -32,11 +32,6 @@ if (isset($_GET['row']) && isset($_GET['column'])) {
     $_SESSION['gametable'][$row][$colMin] = switchLight($_SESSION['gametable'][$row][$colMin]);
 
 
-
-
-
-
-
     header("Location: index.php");
 
 }

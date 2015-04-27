@@ -4,6 +4,7 @@ ob_start();
 session_start();
 $row = 3;
 $col = 3;
+$total = (($row + 1) * ($col + 1));
 
 
 
@@ -16,7 +17,7 @@ if (!isset($_SESSION['gametable'])) {
         }
     }
 
-
+    $_SESSION['message'] = "";
 
     for($i = 0; $i < 10; $i++)
     {
@@ -36,7 +37,7 @@ if (!isset($_SESSION['gametable'])) {
 
     }
 
-    $_SESSION['counter'] = 14;
+
 
 }
 
@@ -57,24 +58,27 @@ include("core/functions.php");
         <?php
 
 
-
+        $counter = 0;
         for ($i = 0; $i <= $row; $i++){
             echo "<tr>";
             for ($j = 0; $j <= $col; $j++){
-                if ($_SESSION['gametable'][$i][$j] == 0) {
+                if ($_SESSION['gametable'][$i][$j] == 0)
+                {
                     echo "<td><a href=\"index.php?row=$i&column=$j\"><img src=\"images/lightsout-uit.png\" alt=\"img\"/></a></td>";
-                    $_SESSION['counter'] = $_SESSION['counter'] + 1;
-
+                    $counter++;
                 }
                 elseif ($_SESSION['gametable'][$i][$j] == 1)
                 {
                     echo "<td><a href=\"index.php?row=$i&column=$j\"><img src=\"images/lightsout-aan.png\" alt=\"img\"/></a></td>";
-                    $_SESSION['counter'] = $_SESSION['counter'] - 1;
+
 
                 }
             }
             echo "</tr>";
         }
+
+
+
 
 
         ?>
@@ -87,7 +91,13 @@ include("core/functions.php");
 
 
 <?php
-print_r($_SESSION['counter']);
+
+if ($counter == $total)
+{
+    $_SESSION['message'] = "You win";
+}
+
+echo $_SESSION['message'];
 
 ob_flush();
 
